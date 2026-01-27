@@ -1,0 +1,32 @@
+# Source files (we only want built files in npm)
+src/
+
+# Development files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+tsup.config.ts
+tsconfig.json
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+
+# Docs (keep README and LICENSE)
+docs/
+examples/
+
+# Misc
+*.md
+!README.md
+
+tsup.config.ts
+tsconfig.json

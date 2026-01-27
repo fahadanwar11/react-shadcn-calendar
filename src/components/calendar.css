@@ -1,0 +1,262 @@
+/* Year Calendar Layout */
+.year-calendar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Month Grid */
+.month-grid {
+  border: 2px solid hsl(var(--border));
+  border-radius: 8px;
+  overflow: hidden;
+  background: hsl(var(--card));
+  padding: 4px 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.month-header {
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 2px solid hsl(var(--border));
+}
+
+/* Weekday Header */
+.weekday-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: hsl(var(--muted) / 0.5);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.weekday-cell {
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+}
+
+/* Days Grid */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: hsl(var(--border));
+}
+
+.calendar-day-cell {
+  background: hsl(var(--card));
+  padding: 0.4rem;
+  min-height: 4.5rem;
+  max-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  transition: all 0.2s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.calendar-day-cell.empty {
+  background: hsl(var(--muted) / 0.3);
+}
+
+.calendar-day-cell.clickable {
+  cursor: pointer;
+}
+
+.calendar-day-cell.clickable:hover {
+  background: hsl(var(--muted) / 0.5);
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+.day-number {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  align-self: flex-start;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+/* Weekend Styling */
+.calendar-day-cell.weekend {
+  background: #b8e6b8;
+}
+
+.calendar-day-cell.weekend.clickable:hover {
+  background: #a5d8a5;
+}
+
+/* Event Indicators */
+.event-indicator {
+  font-size: 0.7rem;
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.event-indicator:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+.event-indicator.holiday {
+  background: #dc2626;
+}
+
+.event-indicator.salary_day {
+  background: #ea580c;
+}
+
+.event-name {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Alternative styling for cells with events */
+.calendar-day-cell.has-holiday {
+  border-left: 3px solid #dc2626;
+}
+
+.calendar-day-cell.has-salary {
+  border-left: 3px solid #ea580c;
+}
+
+.calendar-day-cell.has-holiday.has-salary {
+  border-left: 3px solid #dc2626;
+  border-right: 3px solid #ea580c;
+}
+
+/* Event Legend */
+.event-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  background: hsl(var(--card));
+  border: 2px solid hsl(var(--border));
+  border-radius: 8px;
+}
+
+.legend-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-indicator {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.legend-indicator.holiday-indicator {
+  background: #dc2626;
+}
+
+.legend-indicator.salary-indicator {
+  background: #ea580c;
+}
+
+.legend-indicator.weekend-indicator {
+  background: #16a34a;
+}
+
+.legend-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: hsl(var(--foreground));
+}
+
+.legend-events {
+  font-size: 0.8rem;
+  color: hsl(var(--muted-foreground));
+  margin-left: 2.5rem;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .calendar-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .month-header {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+  
+  .calendar-day-cell {
+    min-height: 2.5rem;
+  }
+  
+  .event-legend {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .weekday-cell {
+    font-size: 0.7rem;
+  }
+  
+  .day-number {
+    font-size: 0.7rem;
+  }
+  
+  .event-indicator {
+    font-size: 0.6rem;
+    padding: 1px 3px;
+  }
+}
