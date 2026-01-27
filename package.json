@@ -1,6 +1,6 @@
 {
   "name": "@fahadanwar11/react-shadcn-calendar",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A beautiful, customizable calendar component built with React and shadcn/ui",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
