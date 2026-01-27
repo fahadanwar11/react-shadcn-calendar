@@ -5,7 +5,7 @@ This guide will help you publish your calendar package to npm.
 ## Pre-publish Checklist
 
 1. **Update package.json**
-   - Change `@your-username/react-shadcn-calendar` to your actual npm username/org
+   - Change `@fahadanwar11/react-shadcn-calendar` to your actual npm username/org
    - Update `author` field with your name
    - Update `repository` URL with your GitHub repo
    - Set appropriate `version` (start with 1.0.0 for first release)
@@ -105,7 +105,7 @@ This guide will help you publish your calendar package to npm.
 ## Troubleshooting
 
 ### Package name already exists
-- Choose a different name or use a scoped package: `@your-username/package-name`
+- Choose a different name or use a scoped package: `@fahadanwar11/package-name`
 
 ### Build errors
 - Run `npm install` to ensure all dependencies are installed
@@ -122,10 +122,10 @@ This guide will help you publish your calendar package to npm.
 npm pack --dry-run
 
 # Check package metadata
-npm view @your-username/react-shadcn-calendar
+npm view @fahadanwar11/react-shadcn-calendar
 
 # Unpublish (within 72 hours of publishing)
-npm unpublish @your-username/react-shadcn-calendar@1.0.0
+npm unpublish @fahadanwar11/react-shadcn-calendar@1.0.0
 
 # Check for outdated dependencies
 npm outdated

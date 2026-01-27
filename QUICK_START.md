@@ -54,7 +54,7 @@ This creates a `.tgz` file you can install in another project to test.
 
 ### 4. Customize Before Publishing
 Update these in `package.json`:
-- `name`: Change `@your-username/react-shadcn-calendar` to your actual npm username
+- `name`: Change `@fahadanwar11/react-shadcn-calendar` to your actual npm username
 - `author`: Add your name
 - `repository`: Add your GitHub repo URL
 
@@ -81,8 +81,8 @@ npm install @fahadanwar11/react-shadcn-calendar
 
 And use it:
 ```tsx
-import { YearCalendar } from '@your-username/react-shadcn-calendar';
-import '@your-username/react-shadcn-calendar/styles.css';
+import { YearCalendar } from '@fahadanwar11/react-shadcn-calendar';
+import '@fahadanwar11/react-shadcn-calendar/styles.css';
 
 <YearCalendar year={2026} events={[]} />
 ```

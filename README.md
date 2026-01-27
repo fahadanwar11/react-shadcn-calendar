@@ -39,9 +39,9 @@ You'll also need to install Tailwind CSS and configure it for your project.
 ### Basic Usage
 
 ```tsx
-import { YearCalendar, EventType } from '@your-username/react-shadcn-calendar';
-import type { CalendarEvent } from '@your-username/react-shadcn-calendar';
-import '@your-username/react-shadcn-calendar/styles.css';
+import { YearCalendar, EventType } from '@fahadanwar11/react-shadcn-calendar';
+import type { CalendarEvent } from '@fahadanwar11/react-shadcn-calendar';
+import '@fahadanwar11/react-shadcn-calendar/styles.css';
 
 const events: CalendarEvent[] = [
   {
@@ -73,8 +73,8 @@ function App() {
 
 ```tsx
 import { useState } from 'react';
-import { YearCalendar, EventDialog } from '@your-username/react-shadcn-calendar';
-import type { CalendarEvent, EventFormData } from '@your-username/react-shadcn-calendar';
+import { YearCalendar, EventDialog } from '@fahadanwar11/react-shadcn-calendar';
+import type { CalendarEvent, EventFormData } from '@fahadanwar11/react-shadcn-calendar';
 import { toast } from 'sonner';
 
 function App() {
